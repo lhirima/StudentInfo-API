@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentAPI.Data;
-using StudentAPI.Models;
+using StudentApi.Data;
+using StudentApi.Models;
 
 namespace StudentAPI.Controllers
 {

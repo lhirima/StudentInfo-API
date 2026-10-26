@@ -1,4 +1,4 @@
-namespace StudentAPI.Models;
+namespace StudentApi.Models;
 public class StudentRow
 {
     public int Id { get; set; }
