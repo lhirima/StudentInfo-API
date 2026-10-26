@@ -14,6 +14,15 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 connectionString = NormalizePostgresConnectionString(connectionString);
 builder.Services.AddDbContext<StudentDbContext>(options => options.UseNpgsql(connectionString));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("GitHubPages", policy =>
+    {
+        policy.WithOrigins("https://athlonlax.github.io")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -28,6 +37,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("GitHubPages");
 
 app.UseAuthorization();
 
