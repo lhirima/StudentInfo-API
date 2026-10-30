@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("GitHubPages", policy =>
     {
-        policy.WithOrigins("https://athlonlax.github.io")
+        policy.WithOrigins("https://lhirima.github.io")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
